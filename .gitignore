@@ -1,0 +1,14 @@
+# Ignore executable files
+#*.exe
+
+# Ignore dynamic link library files
+#*.dll
+*.log
+*.dat
+
+
+MQ2Nav*/
+BigPoppaPizzaCo*/
+SharedData*/
+mono/macros/e3/ 
+Logs*/
