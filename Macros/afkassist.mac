@@ -1,0 +1,13 @@
+Sub Main
+    /declare timerRunning bool outer false
+    /declare startTime int outer 0
+    ;5minutes
+    /declare timeoutSeconds int outer 360
+
+    /echo Starting timer. Will check for player movement every 10 seconds.
+
+    :startTimer
+        /if 
+
+    /goto :startTimer
+/return
