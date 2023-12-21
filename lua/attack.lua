@@ -32,8 +32,8 @@ local function message(message)
 end
 
 local function ClearTargets()
-    mq.cmd("/cleartarget /all")
-    return mq.cmd("/e3bct nocap /cleartarget /all")
+    mq.cmd("/cleartarget")
+    return mq.cmd("/e3bct nocap /cleartarget")
 end 
 
 local function ComeToMeCommand()
@@ -48,12 +48,13 @@ end
 
 local function TargetNearestEnemy()
     --test.equal(Me.NearestSpawn('radius 0 pc')(), Me.CleanName())
-    local nearestSpawn = mq.cmd('/tar ${NearestSpawn[npc radius 100 "vampyre"]}')
+    local nearestSpawn = mq.cmd('/tar ${NearestSpawn[npc radius 100 "noc"]}')
     return nearestSpawn
 end
 
 local function Attack()
     mq.cmd("/attack")
+    mq.cmd("/assistme")
 end
 
 
@@ -74,7 +75,7 @@ local xTargetTimer = 0 -- Timer for tracking time with xtargets
 while true do
 
 
-    Attack()
+
 
     -- Check for movement
     local moving = isMoving()
@@ -141,7 +142,7 @@ while true do
 
 
 
-    if CombatStatus == "ACTIVE" then
+    if CombatStatus == "ACTIVE" or CombatStatus =="COMBAT" then
         TargetNearestEnemy()
         --cast on target
         mq.cmd("/cast Spear of Disease")
