@@ -33,7 +33,7 @@ end
 
 local function ClearTargets()
     mq.cmd("/cleartarget")
-    return mq.cmd("/e3bct nocap /cleartarget")
+    return mq.cmd("/e3bct winnston /cleartarget")
 end 
 
 local function ComeToMeCommand()
