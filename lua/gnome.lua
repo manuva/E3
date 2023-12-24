@@ -54,6 +54,7 @@ while true do
                     end
                 end
             end
+            mq.delay(30000)
         end
-        mq.delay(30000)
+        --mq.delay(30000)
 end
