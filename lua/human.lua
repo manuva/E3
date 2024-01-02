@@ -1,7 +1,7 @@
 -- Get access to MQ functionality
 local mq = require('mq')
 -- List of spawns to check
-local spawnsToCheck = {"Jode", "Oogah", "Slushie", "Bussin", "Nocap", "Amerikka"}
+local spawnsToCheck = {"Jode", "Oogah", "Slushie", "Fufanu", "Amerikka"}
 
 local function isMoving()
     return mq.TLO.Me.Moving()
@@ -25,7 +25,8 @@ local function getCombatState()
 end
 
 local function castIllusionSpell()
-    return mq.cmd('/queuecast Bigcarl "Illusion: Human"')
+    castProjectIllusion()
+    return mq.cmd('/nowcast Bigcarl "Illusion: Human"')
 end
 
 while true do
@@ -37,11 +38,11 @@ while true do
             local spawnRace = getRace(spawnName)
             print(spawnName .. "'s race: " .. spawnRace)
 
-            if spawnRace == "Human" then
-                print(spawnName .. " is a Human! No need to cast " .. timestamp)
+            if spawnRace == "Gnome" then
+                print(spawnName .. " is a gnome! No need to cast " .. timestamp)
             else
-                -- spawn is not a Human, make them one.
-                print("not a Human")
+                -- spawn is not a gnome, make them one.
+                print("not a gnome")
                 if getCombatState() == "ACTIVE" or getCombatState() == "COOLDOWN" or getCombatState == "DEBUFFED"  then
                     if moving then
                         -- moving
@@ -50,10 +51,11 @@ while true do
                         print("<<<combat is active. CASTING ILLUSION>>>")
                         castProjectIllusion()
                         mq.cmd("/target " .. spawnName)
-                        castIllusionSpell() 
+                        castIllusionSpell()
+                        mq.delay(15000)
                     end
                 end
             end
         end
-        mq.delay(30000)
+    mq.delay(15000)
 end

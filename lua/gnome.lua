@@ -1,7 +1,7 @@
 -- Get access to MQ functionality
 local mq = require('mq')
 -- List of spawns to check
-local spawnsToCheck = {"Jode", "Oogah", "Slushie", "Bussin", "Nocap"}
+local spawnsToCheck = {"Jode", "Oogah", "Slushie", "Bussin", "Nocap", "Fufanu"}
 
 local function isMoving()
     return mq.TLO.Me.Moving()
@@ -25,7 +25,7 @@ local function getCombatState()
 end
 
 local function castIllusionSpell()
-    return mq.cmd('/queuecast Bigcarl "Illusion: Gnome"')
+    return mq.cmd('/nowcast Bigcarl "Illusion: Gnome"')
 end
 
 while true do
