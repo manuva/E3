@@ -133,7 +133,7 @@ while true do
         ClearTargets()
         mq.delay(clearTargetInterval * 1000)
     else
-        mq.delay(8000)
+        mq.delay(5000)
     end
         --print(">Player has been stopped for " .. xTargetTimer .. "seconds. Monitoring targets and combat")
         --ClearTargets() 
