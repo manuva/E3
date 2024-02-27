@@ -140,8 +140,6 @@ while true do
         --xTargetTimer = 0
         --player has been stopped for 30 seconds (threshold)
 
-
-
     if CombatStatus == "ACTIVE" or CombatStatus =="COMBAT" then
         TargetNearestEnemy()
         --cast on target
